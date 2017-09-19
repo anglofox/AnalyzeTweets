@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import requests
 from pandas import Series
+
 import constants
 import get_tweets
 
@@ -44,11 +45,13 @@ if __name__ == "__main__":
     needs = go_through_category("NEEDS", traits[0])
     series = Series(list(needs.values()))
     series.plot(kind="bar", ylim=(0, 1))
+    plt.savefig("needs.jpg")
     plt.show()
     print("_______________________________________")
 
     personality = go_through_category("PERSONALITY", traits[1])
     series = Series(list(personality.values()))
+    plt.savefig("personality.jpg")
     series.plot(kind="bar", ylim=(0, 1))
     plt.show()
 
@@ -56,5 +59,6 @@ if __name__ == "__main__":
 
     values = go_through_category("VALUES", traits[2])
     series = Series(list(values.values()))
+    plt.savefig("values.jpg")
     series.plot(kind="bar", ylim=(0, 1))
     plt.show()
