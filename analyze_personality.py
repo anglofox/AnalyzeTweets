@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import requests
 from pandas import Series
-
 import constants
 import get_tweets
 
